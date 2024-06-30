@@ -35,57 +35,78 @@ a:hover {
   margin: 0 auto;
   padding:50px;
   display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items:center
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center
 
 }
 
 
 /* Flex Container */
 .flex-nav ul {
-  /*display: flex; */
+  display: flex;
   border: 1px solid black;
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-flow: row wrap;
+  justify-content: flex-end;
   align-items: center;
-  flex-wrap: wrap;
+  flex: auto;
+}
+
+.flex-nav li{
+  list-style: none;
 }
 
 /* Smaller Screen Media Query */
-@media all and (max-width:1000px) {
-  .flex-nav li{flex-basis:50%;
-  max-width:50%;}
+@media all and (max-width: 1000px) {
+  .flex-nav li{
+    flex-basis: 50%;
+    max-width: 50%;
+    align-items: stretch;
+    align-content: stretch;
+    border: yellow 1px solid;
+    justify-content: space-around;
+  }
 
-  .social {flex-basis:25%;
-  display: flex;
-  flex-direction:row;
-  justify-content: center;
+  .social {
+    flex-basis: 25%;
+    max-width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
   }
 }
 
 /* Smallest Screen Media Query */
-@media all and (max-width:500px) {
-  .flex-nav {flex-direction:column;
-    align-items:center;
-    justify-content:center;
-  }
-  .flex-nav ul{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap; 
-  list-style: none;
-  align-items:center;
-  justify-content:center;
-  }
+@media all and (max-width: 500px) {
+  .flex-nav {
+    flex-direction: column;
+    flex-flow: column wrap;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    }
 
-  .social{flex-basis: 25%;
-  display:flex;
-  flex-direction:row;
-  justify-content:center;
-  }
+    .flex-nav ul{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap; 
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social{
+      flex-basis: 25%;
+      max-width: 25%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 0;
+      padding: 0;
+    }
 }
