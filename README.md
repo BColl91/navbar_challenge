@@ -1,3 +1,3 @@
 The Flex-Box Challenge
 
-almost complete..
+WIP: I need to figure out what is preventing the social class from turning into a row...
