@@ -45,7 +45,8 @@ a:hover {
 /* Flex Container */
 .flex-nav ul {
   display: flex;
-  border: 1px solid black;
+  min-width: 600px;
+  border: 1px solid red;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -62,32 +63,43 @@ a:hover {
 
 /* Smaller Screen Media Query */
 @media all and (max-width: 1000px) {
+  .flex-nav {
+    flex-direction: column;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    }
+
   .flex-nav li{
+    display:flex;
     flex-basis: 50%;
     max-width: 50%;
+    max-height: 50%;
     align-items: stretch;
     align-content: stretch;
     border: yellow 1px solid;
     justify-content: space-around;
+    padding: 10px;
   }
 
   .social {
+    display:flex;
+    min-width: 600px;
     flex-basis: 25%;
     max-width: 25%;
-    display: flex;
+    flex-flow: row;
     flex-direction: row;
     justify-content: space-around;
+    float: left;
     margin: 0;
-    padding: 0;
   }
 }
 
 /* Smallest Screen Media Query */
-@media all and (max-width: 500px) {
-  .flex-nav {
+@media all and (max-width: 600px) {
+  .flex-nav { 
     flex-direction: column;
     flex-flow: column wrap;
-    padding: 0;
     align-items: center;
     justify-content: center;
     }
